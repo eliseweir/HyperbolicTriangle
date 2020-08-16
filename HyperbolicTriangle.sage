@@ -1,3 +1,10 @@
+"""
+Creates nxn matrices a, b, c satisfying a^p = b^q = c^r = abc = id.
+
+Produces a representation of a T(p,q,r) hyperbolic triangle group in PSL(n,R) by composing the holonomy 
+representation T(p,q,r) -> PSL(2,R) with the unique irreducible representation PSL(2,R) -> PSL(n,R).
+"""
+
 import sys
 
 class HyperTriAngle:
@@ -75,7 +82,7 @@ while angleflag:
             sys.exit()
         # check to make sure the triangle is actually hyperbolic
         if p < 2 or q < 2 or r < 2:
-            print("p,q,r must be at least 2 so that angles are at least pi/2.\n")
+            print("p,q,r must be at least 2 so that angles are at most pi/2.\n")
         elif 1/p + 1/q + 1/r >= 1:
             print("Your T(p,q,r) triangle must be hyperbolic. You entered a", end = " ")
             if 1/p + 1/q + 1/r == 1:
